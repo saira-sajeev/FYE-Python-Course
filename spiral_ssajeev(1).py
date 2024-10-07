@@ -1,10 +1,10 @@
 """
 Author: Saira Sajeev, ssajeev@purdue.edu
-Assignment: 6.2.4 - Spiral
-Date: 10/06/2024
+Assignment: 5.2.2 Spiral
+Date: 09/26/2024
 
 Description:
-    Using the math and turtle modules, draw an Archimedean spiral using the equations for the x and y path.
+     Using turtle commands, draw a octogonal spiral that starts with sides 4 pixels long and increases by 4 pixels every 45 degree turn.
 
 Contributors:
     Name, login@purdue.edu [repeat for each]
@@ -37,28 +37,21 @@ def start():
     Do not modify this function or any of the properties it sets.
     """
     setup(564, 564)
-    width(5)
+    width(10)
 
 
 def main():
     """Write your mainline logic below this line (then delete this line)."""
-    import math as m
-    #setting x,y,and theta to zero to initialize values for each variable
-    theta = 0
-    x = 0
-    y = 0
-    speed(100)
-    '''radius = int(m.sqrt(((m.degrees(theta)*m.cos(theta))/m.pi**2)**2 + ((m.degrees(theta)*m.sin(theta))/m.pi**2)**2))'''
-    #setting origin point for the spiral
-    goto(x,y)
-    #use a while function to keep solving for x and y components of each point on the spiral
-    #increase theta in range from 0 to 38
-    while theta <= 37.6:
-        theta += 0.05
-        x = (m.degrees(theta)*m.cos(theta))/m.pi**2
-        y = (m.degrees(theta)*m.sin(theta))/m.pi**2
-        goto(x, y)
-        
+#using a for loop to draw the spiral
+#use range from 1 to number that I find based on guess and check
+for pixels in range(1,43):
+    #multiplies by 4 pixels, turns 45 degrees and multiplies by 4 again
+    width(5)
+    forward(4*pixels)
+    left(45)
+
+
+
 """Do not change anything below this line."""
 if __name__ == "__main__":
     start()

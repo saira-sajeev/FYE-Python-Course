@@ -1,10 +1,10 @@
 """
-Author: Your Name, login@purdue.edu
+Author: Saira, ssajeev@purdue.edu
 Assignment: 06.3 - Random Vowels
-Date: MM/DD/YYYY
+Date: 10/06/24
 
 Description:
-    Describe your program here.
+   Using the vowel file I created defining the turtle commands for letters and importing that file, generate the letters in a random order.
 
 Contributors:
     Name, login@purdue.edu [repeat for each]
@@ -28,6 +28,9 @@ Academic Integrity Statement:
 
 """Import modules below this line (starting with unit 6)."""
 from turtle import *
+import random as r
+import vowels as v
+
 
 """Write new functions below this line (starting with unit 4)."""
 
@@ -46,8 +49,27 @@ def start():
 def main():
     """Write your mainline logic below this line (then delete this line)."""
 
-    #Test git update
+    x,y = pos()
+    
+    list_of_vowels = ['a','e','i','o','u']
+    
+    # Draw each letter and move to the next position
+    r.shuffle(list_of_vowels) # iterate through list of letters randomly
+    for letter in list_of_vowels:
+        if letter == 'a':
+            v.draw_a(x, y)
+        elif letter == 'e':
+            v.draw_e(x, y)
+        elif letter == 'i':
+            v.draw_i(x, y)
+        elif letter == 'o':
+            v.draw_o(x, y)
+        elif letter == 'u':
+            v.draw_u(x, y)
+        x += 90 #move horizontally after every letter is drawn
+          
 
+    
 
 """Do not change anything below this line."""
 if __name__ == "__main__":
